@@ -1,7 +1,9 @@
+import customBaseQuery from "@/utils/httpClient";
 import { createSlice } from "@reduxjs/toolkit";
+import { createApi } from "@reduxjs/toolkit/query/react";
+import { RootState } from "../types/common";
 import { UserAuthDetail, UserDetail } from "../types/user";
 import { getUserAuthenticatedDetail } from "../utils/localStore";
-import { RootState } from "../types/common";
 
 export interface UserState {
   authenticatedDetail: UserAuthDetail;
@@ -19,6 +21,19 @@ const initialState: UserState = {
     registerType: "email",
   },
 };
+
+export const userApi = createApi({
+  reducerPath: "userApi",
+  baseQuery: customBaseQuery,
+  endpoints: (builder) => ({
+    getExampleData: builder.query({
+      query: () => "/example",
+    }),
+    getAnotherData: builder.query({
+      query: () => "/another",
+    }),
+  }),
+});
 
 const userSlice = createSlice({
   name: "user",

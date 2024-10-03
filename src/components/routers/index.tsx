@@ -1,8 +1,8 @@
 import { Suspense, useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
-import DashboardPage from "../../pages/dashboard";
 import ProtectedRoute from "./ProtectedRoute";
+import DashboardPage from "@/pages/dashboard";
 
 const router = createBrowserRouter([
   // {
