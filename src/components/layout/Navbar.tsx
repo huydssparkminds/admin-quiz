@@ -1,14 +1,15 @@
 import { AppShell, NavLink, ScrollArea } from "@mantine/core";
 import {
-  IconAppWindow,
+  IconApps,
+  IconBrandDatabricks,
+  IconCategory2,
   IconGauge,
-  IconReportAnalytics,
-  IconStack2,
+  IconHelpOctagon,
   IconUsers,
 } from "@tabler/icons-react";
 import { useLocation, useNavigate } from "react-router-dom";
-import classes from "./style.module.scss";
 import { UserMenu } from "../../types/user";
+import classes from "./style.module.scss";
 
 interface NavbarProps {}
 
@@ -16,14 +17,16 @@ const getMenuIcon = (icon: string) => {
   switch (icon) {
     case "gauge":
       return <IconGauge size="1rem" stroke={1.5} />;
-    case "stack2":
-      return <IconStack2 size="1rem" stroke={1.5} />;
-    case "reportAnalytics":
-      return <IconReportAnalytics size="1rem" stroke={1.5} />;
+    case "question":
+      return <IconHelpOctagon size="1rem" stroke={1.5} />;
+    case "mana":
+      return <IconApps size="1rem" stroke={1.5} />;
     case "users":
       return <IconUsers size="1rem" stroke={1.5} />;
-    case "appWindow":
-      return <IconAppWindow size="1rem" stroke={1.5} />;
+    case "category":
+      return <IconCategory2 size="1rem" stroke={1.5} />;
+    case "exam":
+      return <IconBrandDatabricks size="1rem" stroke={1.5} />;
     default:
       return null;
   }
@@ -78,8 +81,31 @@ const Navbar: React.FunctionComponent<NavbarProps> = () => {
 
   const menus: UserMenu[] = [
     {
-      label: "dashboard",
+      label: "Dashboard",
       link: "/",
+      icon: "gauge",
+    },
+    {
+      label: "Exams",
+      link: "/exams",
+      icon: "exam",
+    },
+    {
+      label: "Managements",
+      link: "/management",
+      icon: "mana",
+      childrens: [
+        {
+          label: "Questions",
+          link: "question",
+          icon: "question",
+        },
+        {
+          label: "Topics",
+          link: "topic",
+          icon: "category",
+        },
+      ],
     },
   ];
 

@@ -3,6 +3,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Navbar from "./Navbar";
+import Breadcrumb from "./components/PageTitle";
 
 interface MainLayoutProps {}
 
@@ -35,6 +36,7 @@ const MainLayout: React.FunctionComponent<MainLayoutProps> = () => {
       <AppShell.Main>
         <Container fluid px={0}>
           <Stack>
+            <Breadcrumb />
             <Outlet />
           </Stack>
         </Container>

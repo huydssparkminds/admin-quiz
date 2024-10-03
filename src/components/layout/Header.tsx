@@ -1,6 +1,7 @@
 import { AppShell, Burger, Flex, Group, Image } from "@mantine/core";
 import Logo from "../../assets/react.svg";
 import User from "./components/User";
+import LightDarkMode from "./components/LightDarkMode";
 
 interface HeaderProps {
   mobileOpened: boolean;
@@ -34,6 +35,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           <Image h={40} w={110} fit="contain" src={Logo} />
         </Flex>
         <Flex gap="lg" justify="flex-end" align="center">
+          <LightDarkMode />
           <User />
         </Flex>
       </Group>

@@ -38,7 +38,20 @@ export const userApi = createApi({
 const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    reset() {
+      return initialState;
+    },
+    resetUserDetail: (state) => {
+      state.userDetail = initialState.userDetail;
+    },
+  },
+  extraReducers(builder) {
+    builder.addMatcher(
+      userApi.endpoints.getExampleData.matchFulfilled,
+      (state) => {}
+    );
+  },
 });
 
 export const selectAuthenticatedDetail = (state: RootState) =>
@@ -46,3 +59,5 @@ export const selectAuthenticatedDetail = (state: RootState) =>
 export const selectUserDetail = (state: RootState) => state.user.userDetail;
 
 export default userSlice.reducer;
+
+export const {} = userApi;
