@@ -1,0 +1,41 @@
+.bgIcon {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+
+    &.bgIconGreen {
+        background-color: #b4edcc;
+    }
+
+    &.bgIconPurple {
+        background-color: #d8bfe9;
+    }
+
+
+    &.bgIconOrange {
+        background-color: #f8c8b8;
+    }
+
+    &.bgIconYellow {
+        background-color: #ffe4b6;
+    }
+}
+
+.paperGreen {
+    background-color: #e1f8ea;
+}
+
+.paperPurple {
+    background-color: #efe6f7;
+}
+
+.paperOrange {
+    background-color: #fdeae4;
+}
+
+
+.paperYellow {
+    background-color: #fff5e1;
+}
