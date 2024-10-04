@@ -10,6 +10,7 @@ import {
 import { useLocation, useNavigate } from "react-router-dom";
 import { UserMenu } from "../../types/user";
 import classes from "./style.module.scss";
+import { menus } from "../routers/route";
 
 interface NavbarProps {}
 
@@ -78,36 +79,6 @@ const renderMenu = (
 const Navbar: React.FunctionComponent<NavbarProps> = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-
-  const menus: UserMenu[] = [
-    {
-      label: "Dashboard",
-      link: "/",
-      icon: "gauge",
-    },
-    {
-      label: "Exams",
-      link: "/exams",
-      icon: "exam",
-    },
-    {
-      label: "Managements",
-      link: "/management",
-      icon: "mana",
-      childrens: [
-        {
-          label: "Questions",
-          link: "question",
-          icon: "question",
-        },
-        {
-          label: "Topics",
-          link: "topic",
-          icon: "category",
-        },
-      ],
-    },
-  ];
 
   const handleChangePage = (link: string) => {
     navigate(link);

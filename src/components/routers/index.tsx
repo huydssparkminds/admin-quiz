@@ -17,6 +17,26 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: <ProtectedRoute element={DashboardPage} title="Dashboard" />,
       },
+      {
+        path: "/question",
+        element: <ProtectedRoute element={DashboardPage} title="Question" />,
+      },
+      {
+        path: "/topics",
+        element: <ProtectedRoute element={DashboardPage} title="Topics" />,
+      },
+      {
+        path: "/Exams",
+        element: <ProtectedRoute element={DashboardPage} title="exams" />,
+      },
+      {
+        path: "/exams-result",
+        element: <ProtectedRoute element={DashboardPage} title="Exam result" />,
+      },
+      {
+        path: "/user",
+        element: <ProtectedRoute element={DashboardPage} title="User" />,
+      },
     ],
   },
 ]);
